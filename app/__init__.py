@@ -12,8 +12,9 @@ def create_app(test_config=None):
   def hello():
     return 'hello world'
 
-
+  from app.routes.dashboard import bp as dashboard
   from app.routes.home import bp as home
   app.register_blueprint(home)
+  app.register_blueprint(dashboard)
 
   return app
